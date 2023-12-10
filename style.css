@@ -1,0 +1,15 @@
+/* hide the logo for when I talk with online people */
+
+/* #logo {
+	visibility:hidden!important
+} */
+
+.seance-Cell {
+	width: 300px;
+}
+
+@media screen and ( max-width: 635px ) {
+	.seance-Cell {
+		width: 95% !important;
+	}
+}
