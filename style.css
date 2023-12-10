@@ -4,6 +4,19 @@
 	visibility:hidden!important
 } */
 
+.bg-success:has(input:checked) {
+	background-color: #075507 !important;
+}
+.bg-secondary:has(input:checked) {
+	background-color: #282a2c !important;
+}
+.bg-danger:has(input:checked) {
+	background-color: #5a1e1e !important;
+}
+label.border-black:has(input:checked) {
+	border-color: #00000000 !important;
+}
+
 .seance-Cell {
 	width: 300px;
 }
