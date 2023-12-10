@@ -4,6 +4,7 @@ const seanceList = document.querySelector("main > div");
 /**
  * @param {String} type
  * @param {String} date
+ * @param {Element} removeButton
  */
 export function addSeance(type, date) {
 	seanceList.appendChild(seanceTemplate.cloneNode(true));
@@ -14,7 +15,7 @@ export function addSeance(type, date) {
 	});
 	seance.querySelector(".seance").textContent = type;
 	seance.querySelector(".date").textContent = date;
-/* 	seance.querySelector(".delete").addEventListener("click", () => {
+ 	seance.querySelector(".delete").addEventListener("click", () => {
 		seance.remove();
-	}) */
+	}) 
 }
