@@ -1,4 +1,5 @@
 import { addSeance } from "./script/addSeance.js";
+import { loadSeance } from "./script/loadSeance.js";
 
 const newSeance = document.querySelector("#NewSeance");
 newSeance.querySelector("input[type=submit]").addEventListener("click", () => {
@@ -15,5 +16,8 @@ newSeance.querySelector("input[type=submit]").addEventListener("click", () => {
 	}
 })
 
-addSeance("Séance de Patrouille", "01.01.2021");
-addSeance("Séance de Troupe", "02.01.2021");
+loadSeance([
+	["Séance de Troupe", "15.12.2023"],
+	["Séance de Patrouille", "22.12.2023", 2],
+	["Séance de Troupe", "29.12.2023", 0],
+])
