@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presence Planificator</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="m-0 overflow-x-hidden">
+<header class="bg-dark text-white p-3 d-flex align-items-center gap-3">
+  <a href="https://lac-bleu.ch/programmes/#6" id="logo">
+    <img src="media/logo.png" alt="planing button" class="float-start" width="50px">
+  </a>
+  <h1 class="text-center">Presence Planificator</h1>
+</header>
+<main>
+  <div class="d-flex flex-wrap justify-content-evenly">
+  </div>
+  <!-- draw a line across the whole screen -->
+  <div class="flex-grow-1 border-bottom border-2 border-dark mb-3"></div>
+  <div id="NewSeance" class="ms-1">
+    <p>Ajouter une date</p>
+    <div class="d-flex flex-start flex-row">
+      <div>
+        <label><input type="radio" name="new_seance">Séance de Troupe</label><br>
+        <label><input type="radio" name="new_seance">Séance de Patrouille</label><br>
+        <label><input type="radio" name="new_seance">Séance de Groupe</label><br>
+        <label><input type="radio" name="new_seance">Séance Spéciale</label><br>
+      </div>
+      <div class="d-flex flex-column ms-auto me-1">
+        <input type="date" class=""><br>
+        <input type="submit">
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+<script src="main.ts" type="module"></script>
+
+<template id="SeanceTemplate">
+  <div class="d-flex flex-row align-items-center border border-black rounded-4 p-1 m-1 seance-Cell">
+    <div class="d-flex flex-column w-30">
+      <button class="bg-transparent border-0 text-start text-danger fw-bold delete">
+        x
+      </button>
+      <p class="seance">
+      </p>
+      <p class="date">
+      </p>
+    </div>
+    <div class="d-flex flex-column gap-1 w-30 ms-auto">
+      <label class="bg-success text-white border border-1 border-black rounded-4 p-1 text-center customButton">
+        <input type="radio" name="" hidden>
+        <span class="ms-2">Présent</span>
+      </label>
+      <label class="bg-secondary text-white border border-1 border-black rounded-4 p-1 text-center customButton">
+        <input type="radio" name="" hidden checked>
+        <span class="ms-2">Je sais pas</span>
+      </label>
+      <label class="bg-danger text-white border border-1 border-black rounded-4 p-1 text-center customButton">
+        <input type="radio" name="" hidden>
+        <span class="ms-2">Absent</span>
+      </label>
+    </div>
+  </div>
+</template>
+
+</body>
+</html>

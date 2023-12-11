@@ -1,4 +1,4 @@
-import { addSeance } from "./addSeance.js";
+import { addSeance } from "./addSeance";
 
 const seanceList = document.querySelector("main > div");
 
@@ -7,7 +7,7 @@ const seanceList = document.querySelector("main > div");
  */
 
 export function loadSeance(data) {
-	data.forEach((seance) => {
-		addSeance(seance[0], seance[1], seance[2]);
-	});
+  data.forEach((seance) => {
+    addSeance(seance[0], seance[1], seance[2]);
+  });
 }

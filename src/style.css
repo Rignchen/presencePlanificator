@@ -5,24 +5,24 @@
 } */
 
 .bg-success:has(input:checked) {
-	background-color: #075507 !important;
+  background-color: #075507 !important;
 }
 .bg-secondary:has(input:checked) {
-	background-color: #282a2c !important;
+  background-color: #282a2c !important;
 }
 .bg-danger:has(input:checked) {
-	background-color: #5a1e1e !important;
+  background-color: #5a1e1e !important;
 }
 label.border-black:has(input:checked) {
-	border-color: #00000000 !important;
+  border-color: #00000000 !important;
 }
 
 .seance-Cell {
-	width: 300px;
+  width: 300px;
 }
 
 @media screen and ( max-width: 635px ) {
-	.seance-Cell {
-		width: 95% !important;
-	}
+  .seance-Cell {
+    width: 95% !important;
+  }
 }
