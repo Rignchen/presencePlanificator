@@ -14,13 +14,15 @@ if (_seanceTemplate != null && _seanceList != null) {
  * @param date dd.mm.yyyy
  * @param selectedValue 0: absent, 1: je sais pas, 2: présent
  */
-export function addSeance(type: String, date: String, selectedValue: Number = 1) {
+export function addSeance(type: string, date: string, selectedValue: number = 1) {
   seanceList.appendChild(seanceTemplate.cloneNode(true));
   const seance = seanceList.lastElementChild;
 
   if (seance == null) {
+    alert("Erreur lors de l'ajout de la séance")
     return;
   }
+
   const buttons: NodeListOf<HTMLInputElement> = seance.querySelectorAll("input[type=radio]")
   buttons.forEach((radio) => {
     radio.name = String(totalSeance);
@@ -33,14 +35,27 @@ export function addSeance(type: String, date: String, selectedValue: Number = 1)
     alert("Erreur lors de l'ajout de la séance")
     return;
   }
-  seanceType.textContent = String(type);
-  seanceDate.textContent = String(date);
-  buttons[2 - Number(selectedValue)].checked = true;
+
+  if (type != "Séance Spéciale") {
+    seanceType.textContent = type;
+  } else {
+    const autre: HTMLDivElement|null = document.querySelector("#autre");
+    if (autre == null) {
+      return;
+    }
+    else {
+      const autreChild: HTMLInputElement|null = autre.lastElementChild as HTMLInputElement;
+      if (autreChild == null || autreChild.value.trim() == "") seanceType.textContent = type;
+      else {
+        seanceType.textContent = autreChild.value.trim();
+      }
+    }
+  }
+  seanceDate.textContent = date;
+  buttons[2 - selectedValue].checked = true;
 
   const deleteButton = seance.querySelector(".delete");
-  if (deleteButton == null) {
-    return;
-  }
+  if (deleteButton == null) return;
   deleteButton.addEventListener("click", () => {
     seance.remove();
   })

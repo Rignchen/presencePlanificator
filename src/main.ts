@@ -26,9 +26,9 @@ if (newSeance != null) {
   }
 }
 loadSeance([
-  ["Séance Spéciale", "16.12.2023", 1],
+  ["Noël de Groupe", "16.12.2023", 1],
   ["Séance de Troupe", "13.01.2024", 1],
   ["Soirée médias", "13.01.2024", 1],
-  ["Séance Spéciale", "05.08.2024", 1],
-  ["Séance Spéciale", "15.08.2024", 1],
+  ["Camp d'été", "05.08.2024", 1],
+  ["Rangements du camp d'été", "15.08.2024", 1],
 ]);

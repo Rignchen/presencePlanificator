@@ -26,3 +26,10 @@ label.border-black:has(input:checked) {
     width: 95% !important;
   }
 }
+
+#autre:has(input[type="radio"]) input[type="text"] {
+  display: none;
+}
+#autre:has(input[type="radio"]:checked) input[type="text"] {
+  display: block;
+}
