@@ -10,9 +10,9 @@ if (_seanceTemplate != null && _seanceList != null) {
 }
 
 /**
- * @param {String} type type de séance
- * @param {String} date dd.mm.yyyy
- * @param {Number} selectedValue 0: absent, 1: je sais pas, 2: présent
+ * @param type type de séance
+ * @param date dd.mm.yyyy
+ * @param selectedValue 0: absent, 1: je sais pas, 2: présent
  */
 export function addSeance(type: String, date: String, selectedValue: Number = 1) {
   seanceList.appendChild(seanceTemplate.cloneNode(true));

@@ -1,5 +1,5 @@
 import {addSeance} from "./script/addSeance";
-//import {loadSeance} from "./script/loadSeance";
+import {loadSeance} from "./script/loadSeance";
 
 const newSeance = document.querySelector("#NewSeance");
 if (newSeance != null) {
@@ -25,8 +25,10 @@ if (newSeance != null) {
     })
   }
 }
-//loadSeance([
-//  ["Séance de Troupe", "15.12.2023"],
-//  ["Séance de Patrouille", "22.12.2023", 2],
-//  ["Séance de Troupe", "29.12.2023", 0],
-//]);
+loadSeance([
+  ["Séance Spéciale", "16.12.2023", 1],
+  ["Séance de Troupe", "13.01.2024", 1],
+  ["Soirée médias", "13.01.2024", 1],
+  ["Séance Spéciale", "05.08.2024", 1],
+  ["Séance Spéciale", "15.08.2024", 1],
+]);

@@ -2,11 +2,7 @@ import { addSeance } from "./addSeance";
 
 const seanceList = document.querySelector("main > div");
 
-/**
- * @param { [(type:String,date:String,state:Number)] } data
- */
-
-export function loadSeance(data) {
+export function loadSeance(data: [type:String,date:String,state:Number][]) {
   data.forEach((seance) => {
     addSeance(seance[0], seance[1], seance[2]);
   });
