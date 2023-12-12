@@ -1,25 +1,47 @@
-const seanceTemplate = document.querySelector("#SeanceTemplate").content;
-const seanceList = document.querySelector("main > div");
+let _seanceTemplate: HTMLTemplateElement|null = document.querySelector("#SeanceTemplate");
+const _seanceList = document.querySelector("main > div");
+let totalSeance = 0;
+
+let seanceTemplate: DocumentFragment;
+let seanceList: Element;
+if (_seanceTemplate != null && _seanceList != null) {
+  seanceTemplate = _seanceTemplate.content;
+  seanceList = _seanceList;
+}
 
 /**
  * @param {String} type type de séance
  * @param {String} date dd.mm.yyyy
  * @param {Number} selectedValue 0: absent, 1: je sais pas, 2: présent
  */
-export function addSeance(type, date, selectedValue = 1) {
+export function addSeance(type: String, date: String, selectedValue: Number = 1) {
   seanceList.appendChild(seanceTemplate.cloneNode(true));
   const seance = seanceList.lastElementChild;
 
-  const buttons = seance.querySelectorAll("input[type=radio]")
+  if (seance == null) {
+    return;
+  }
+  const buttons: NodeListOf<HTMLInputElement> = seance.querySelectorAll("input[type=radio]")
   buttons.forEach((radio) => {
-    radio.name = seanceList.childElementCount;
+    radio.name = String(totalSeance);
   });
+  totalSeance++;
 
-  seance.querySelector(".seance").textContent = type;
-  seance.querySelector(".date").textContent = date;
-  buttons[2 - selectedValue].checked = true;
+  const seanceDate = seance.querySelector(".date");
+  const seanceType = seance.querySelector(".seance");
+  if (seanceDate == null || seanceType == null) {
+    alert("Erreur lors de l'ajout de la séance")
+    return;
+  }
+  seanceType.textContent = String(type);
+  seanceDate.textContent = String(date);
+  buttons[2 - Number(selectedValue)].checked = true;
 
-  seance.querySelector(".delete").addEventListener("click", () => {
+  const deleteButton = seance.querySelector(".delete");
+  if (deleteButton == null) {
+    return;
+  }
+  deleteButton.addEventListener("click", () => {
     seance.remove();
   })
 }

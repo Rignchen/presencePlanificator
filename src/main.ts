@@ -1,4 +1,4 @@
-//import {addSeance} from "./script/addSeance";
+import {addSeance} from "./script/addSeance";
 //import {loadSeance} from "./script/loadSeance";
 
 const newSeance = document.querySelector("#NewSeance");
@@ -13,10 +13,12 @@ if (newSeance != null) {
         if (seanceDate) {
           const seanceTypeElement = seanceType.parentElement;
           if (seanceTypeElement != null) {
-            //addSeance(seanceTypeElement.textContent, seanceDate.split("-").reverse().join("."));
-            console.log(seanceTypeElement.textContent, seanceDate.split("-").reverse().join("."));
-            seanceType.checked = false;
-            seanceDateElement.value = "";
+            const seanceTypeContent = seanceTypeElement.textContent;
+            if (seanceTypeContent != null) {
+              addSeance(seanceTypeContent, seanceDate.split("-").reverse().join("."));
+              seanceType.checked = false;
+              seanceDateElement.value = "";
+            }
           }
         }
       }
