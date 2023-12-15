@@ -1,26 +1,27 @@
 <div class="d-flex flex-column w-30">
-  <button class="bg-transparent border-0 text-start text-danger fw-bold delete">
-    x
-  </button>
+  <div class="d-flex">
+    <button class="bg-transparent border-0 text-start text-danger fw-bold delete" (click)="deleteSeance(seance.id)">
+      x
+    </button>
+  </div>
   <p class="seance">
+    {{seance.name}}
   </p>
   <p class="date">
+    {{seance.date}}
   </p>
 </div>
 <div class="d-flex flex-column gap-1 w-30 ms-auto">
   <label class="bg-success text-white border border-1 border-black rounded-4 p-1 text-center customButton">
-    <input hidden name=""
-           type="radio">
+    <input hidden type="radio" [checked]="seance.value == 2" (change)="setPresence(2)">
     <span class="ms-2">Présent</span>
   </label>
   <label class="bg-secondary text-white border border-1 border-black rounded-4 p-1 text-center customButton">
-    <input checked hidden name=""
-           type="radio">
+    <input checked hidden type="radio" [checked]="seance.value == 1" (change)="setPresence(1)">
     <span class="ms-2">Je sais pas</span>
   </label>
   <label class="bg-danger text-white border border-1 border-black rounded-4 p-1 text-center customButton">
-    <input hidden name=""
-           type="radio">
+    <input hidden type="radio" [checked]="seance.value == 0" (change)="setPresence(0)">
     <span class="ms-2">Absent</span>
   </label>
 </div>
