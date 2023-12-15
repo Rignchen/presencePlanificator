@@ -18,8 +18,7 @@
   <h1 class="text-center">Presence Planificator</h1>
 </header>
 <main>
-  <div class="d-flex flex-wrap justify-content-evenly">
-  </div>
+  <seance-list></seance-list>
   <!-- draw a line across the whole screen -->
   <div class="flex-grow-1 border-bottom border-2 border-dark mb-3"></div>
   <div id="NewSeance" class="ms-1">
@@ -47,34 +46,6 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
 <script src="main.ts" type="module"></script>
-
-<template id="SeanceTemplate">
-  <div class="d-flex flex-row align-items-center border border-black rounded-4 p-1 m-1 seance-Cell">
-    <div class="d-flex flex-column w-30">
-      <button class="bg-transparent border-0 text-start text-danger fw-bold delete">
-        x
-      </button>
-      <p class="seance">
-      </p>
-      <p class="date">
-      </p>
-    </div>
-    <div class="d-flex flex-column gap-1 w-30 ms-auto">
-      <label class="bg-success text-white border border-1 border-black rounded-4 p-1 text-center customButton">
-        <input type="radio" name="" hidden>
-        <span class="ms-2">Présent</span>
-      </label>
-      <label class="bg-secondary text-white border border-1 border-black rounded-4 p-1 text-center customButton">
-        <input type="radio" name="" hidden checked>
-        <span class="ms-2">Je sais pas</span>
-      </label>
-      <label class="bg-danger text-white border border-1 border-black rounded-4 p-1 text-center customButton">
-        <input type="radio" name="" hidden>
-        <span class="ms-2">Absent</span>
-      </label>
-    </div>
-  </div>
-</template>
 
 </body>
 </html>

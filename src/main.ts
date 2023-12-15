@@ -1,3 +1,11 @@
+import { bootstrapApplication } from '@angular/platform-browser';
+import { AppComponent } from './app/app.component';
+import {provideRouter} from "@angular/router";
+
+bootstrapApplication(AppComponent, {providers: [provideRouter([])]})
+  .catch((err) => console.error(err));
+
+/*
 import {addSeance} from "./script/addSeance";
 import {loadSeance} from "./script/loadSeance";
 
@@ -32,3 +40,4 @@ loadSeance([
   ["Camp d'été", "05.08.2024", 1],
   ["Rangements du camp d'été", "15.08.2024", 1],
 ]);
+*/
