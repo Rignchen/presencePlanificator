@@ -12,8 +12,6 @@ export class SeanceComponent {
     self?.remove();
   }
   setPresence(number: number) {
-    console.log(this.seance.value);
     this.seance.value = number;
-    console.log(this.seance.value);
   }
 }

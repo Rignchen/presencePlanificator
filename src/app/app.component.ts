@@ -7,7 +7,7 @@ import {Seance} from "../seance/seance.model";
   standalone: true, selector: "seance-list", templateUrl: "./app.html", imports: [NgForOf, SeanceModule]
 })
 export class AppComponent {
-  seances: Seance[] = [
+  public seances: Seance[] = [
     new Seance("Noël de Groupe", "16.12.2023", 2),
     new Seance("Séance de Troupe", "13.01.2024", 1),
     new Seance("Soirée médias", "13.01.2024", 0),
