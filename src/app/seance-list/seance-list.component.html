@@ -1,0 +1,29 @@
+<main>
+  <div class="d-flex flex-wrap justify-content-evenly">
+    <app-seance-element
+      *ngFor="let seance of seances; index as i" [seance]=seance [id]="i"
+      class="d-flex flex-row align-items-center border border-black rounded-4 p-1 m-1 seance-Cell">
+    </app-seance-element>
+  </div>
+  <!-- draw a line across the whole screen -->
+  <div class="flex-grow-1 border-bottom border-2 border-dark mb-3"></div>
+  <div class="ms-1" id="NewSeance">
+    <p>Ajouter une date</p>
+    <div class="d-flex flex-start flex-row">
+      <div>
+        <label><input type="radio" name="new_seance">Séance de Troupe</label><br>
+        <label><input type="radio" name="new_seance">Séance de Patrouille</label><br>
+        <label><input type="radio" name="new_seance">Séance de Groupe</label><br>
+        <div id="autre">
+          <label><input type="radio" name="new_seance">Séance Spéciale</label>
+          <input type="text" placeholder="Nom de la séance" class="w-100">
+        </div>
+        <br>
+      </div>
+      <div class="d-flex flex-column ms-auto me-1">
+        <input type="date" class=""><br>
+        <input type="submit" (click)="addSeance()">
+      </div>
+    </div>
+  </div>
+</main>
