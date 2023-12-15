@@ -48,6 +48,7 @@ export function addSeance(type: string, date: string, selectedValue: number = 1)
       if (autreChild == null || autreChild.value.trim() == "") seanceType.textContent = type;
       else {
         seanceType.textContent = autreChild.value.trim();
+        autreChild.value = "";
       }
     }
   }

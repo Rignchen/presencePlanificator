@@ -4,32 +4,13 @@
 	visibility:hidden!important
 } */
 
-.bg-success:has(input:checked) {
-  background-color: #075507 !important;
-}
-.bg-secondary:has(input:checked) {
-  background-color: #282a2c !important;
-}
-.bg-danger:has(input:checked) {
-  background-color: #5a1e1e !important;
-}
-label.border-black:has(input:checked) {
-  border-color: #00000000 !important;
-}
+.bg-success:has(input:checked) {background-color: #053d05 !important;}
+.bg-secondary:has(input:checked) {background-color: #282a2c !important;}
+.bg-danger:has(input:checked) {background-color: #5a1e1e !important;}
+label.border-black:has(input:checked) {border-color: #00000000 !important;}
 
-.seance-Cell {
-  width: 300px;
-}
+seance-item {width: 300px;}
+@media screen and ( max-width: 635px ) { seance-item {width: 95% !important;} }
 
-@media screen and ( max-width: 635px ) {
-  .seance-Cell {
-    width: 95% !important;
-  }
-}
-
-#autre:has(input[type="radio"]) input[type="text"] {
-  display: none;
-}
-#autre:has(input[type="radio"]:checked) input[type="text"] {
-  display: block;
-}
+#autre:has(input[type="radio"]) input[type="text"] {display: none;}
+#autre:has(input[type="radio"]:checked) input[type="text"] {display: block;}

@@ -1,17 +1,12 @@
-import { Component } from "@angular/core";
+import {Component} from "@angular/core";
 import {NgForOf} from "@angular/common";
+import {SeanceModule} from "../seance/seance.module";
 
 @Component({
-  standalone: true,
-  selector: "seance-list",
-  templateUrl: "./app.html",
-  imports: [
-    NgForOf
-  ],
-  styleUrls: []
+  standalone: true, selector: "seance-list", templateUrl: "./app.html", imports: [NgForOf, SeanceModule]
 })
 export class AppComponent {
-  seances: [string,string,number][] = [
+  seances: [string, string, number][] = [
     ["Noël de Groupe", "16.12.2023", 1],
     ["Séance de Troupe", "13.01.2024", 1],
     ["Soirée médias", "13.01.2024", 1],
