@@ -12,17 +12,16 @@ import {FormsModule} from "@angular/forms";
     NgForOf,
     FormsModule
   ],
-  templateUrl: './seance-list.component.html',
-  styleUrl: './seance-list.component.css'
+  templateUrl: './seance-list.component.html'
 })
 export class SeanceListComponent {
   public seances: Seance[] = [
-    new Seance("Noël de Groupe", "16.12.2023", 2),
     new Seance("Séance de Troupe", "13.01.2024", 1),
     new Seance("Soirée médias", "13.01.2024", 0),
-    new Seance("Camp d'été", "05.08.2024", 1),
+    new Seance("Camp d'été", "05.08.2024", 2),
     new Seance("Rangements du camp d'été", "15.08.2024", 1),
   ]
+
   addSeance() {
     // get wich input in the div newSeance is selected
     let inputs: HTMLLabelElement|null = document.querySelector("#newSeance label:has(input:checked)");
@@ -31,7 +30,7 @@ export class SeanceListComponent {
 
     // get the date
     if (dateInput.value == "") return;
-    let date = dateInput.value;
+    let date = dateInput.value.split("-").reverse().join(".");
 
     //get the seance type
     let type = inputs.textContent;
